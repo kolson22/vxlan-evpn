@@ -1,0 +1,27 @@
+---
+
+router_id: 10.137.255.6
+
+# lo0 - iBGP EVPN peer, IP ASM endpoint
+# lo1 - VTEP functions
+loopbacks:
+  - { interface: loopback0, addr: 10.137.255.6, mask: 32 }
+  - { interface: loopback1, addr: 10.137.255.106, mask: 32 }
+
+# Spine links
+underlay_interfaces:
+  - { interface: Ethernet1/53, addr: 10.137.255.27, mask: 31, description: "msp221rt01-spine :: Eth1/4"  }
+  - { interface: Ethernet1/54, addr: 10.137.255.35, mask: 31, description: "msp221rt02-spine :: Eth1/4"  }
+
+# VPC peer information
+vpc_config:
+  - { ip_address: 10.137.0.16, peer_ip_address: 10.137.0.15, domain: 201, priority: 150 }
+
+#VPC peer link information
+vpc_peer_ports:
+  - { interface: Ethernet1/47, description: "msp221rt05-leaf :: Eth1/47" }
+  - { interface: Ethernet1/48, description: "msp221rt05-leaf :: Eth1/48"}
+
+#VPC shared secondary loopback IP (common VTEP)
+vpc_shared_ip:
+  - { interface: Loopback1, addr: 10.137.255.201, mask: 32 }

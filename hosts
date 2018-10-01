@@ -1,0 +1,15 @@
+[all:vars]
+net_platform=cisco_nxos_nxapi
+ansible_connection = local
+user = 
+pwd = 
+
+[spine]
+msp221rt01-spine ansible_host=10.137.0.11
+msp221rt02-spine ansible_host=10.137.0.12
+
+[leaf]
+msp221rt03-leaf ansible_host=10.137.0.13
+msp221rt04-leaf ansible_host=10.137.0.14
+msp221rt05-leaf ansible_host=10.137.0.15
+msp221rt06-leaf ansible_host=10.137.0.16

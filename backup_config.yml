@@ -1,0 +1,13 @@
+---
+  - hosts: all
+    gather_facts: true
+    connection: local
+
+    tasks:
+
+    - name: SAVE AND BACKUP CONFIGURATIONS
+      nxos_config:
+        backup: yes
+        username: "{{ user }}"
+        password: "{{ pwd }}"
+        transport: nxapi

@@ -1,0 +1,22 @@
+---
+
+ospf_process_id: Underlay
+ospf_area: 0
+ospf_global_key: XXXX
+
+asn: 65535
+
+# Use loopback1 IP address
+rp_address: 10.137.255.254
+
+# Use loopback0 IP for spines
+multicast_interface:
+  - { address: 10.137.255.1 }
+  - { address: 10.137.255.2 }
+
+# loopback0 IP for leafs
+bgp_neighbors:
+  - { remote_as: 65535, neighbor: 10.137.255.3, update_source: Loopback0 }
+  - { remote_as: 65535, neighbor: 10.137.255.4, update_source: Loopback0 }
+  - { remote_as: 65535, neighbor: 10.137.255.5, update_source: Loopback0 }
+  - { remote_as: 65535, neighbor: 10.137.255.6, update_source: Loopback0 }

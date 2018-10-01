@@ -1,0 +1,21 @@
+---
+
+  nxos_provider:
+    username: "{{ user }}"
+    password: "{{ pwd }}"
+    transport: nxapi
+    host: "{{ inventory_hostname }}"
+
+  features:
+  - { feature: bgp }
+  - { feature: ospf }
+  - { feature: "nv overlay" }
+  - { feature: pim }
+
+  features_disable:
+  - { feature: telnet }
+  
+  address_families:
+  - { afi: l2vpn, safi: evpn }
+  
+

@@ -1,0 +1,16 @@
+---
+
+router_id: 10.137.255.2
+
+# lo0 = iBGP EVPN Route Reflector
+# lo1 = Multicast Anycast Rendezvous Point (RP)
+loopbacks:
+  - { interface: loopback0, addr: 10.137.255.2, mask: 32 }
+  - { interface: loopback1, addr: 10.137.255.254, mask: 32 }
+
+# Leaf links
+underlay_interfaces:
+  - { interface: Ethernet1/1, addr: 10.137.255.28, mask: 31, description: "msp221rt03-leaf :: Eth1/54" }
+  - { interface: Ethernet1/2, addr: 10.137.255.30, mask: 31, description: "msp221rt04-leaf :: Eth1/54" }
+  - { interface: Ethernet1/3, addr: 10.137.255.32, mask: 31, description: "msp221rt05-leaf :: Eth1/54" }
+  - { interface: Ethernet1/4, addr: 10.137.255.34, mask: 31, description: "msp221rt06-leaf :: Eth1/54" }
