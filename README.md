@@ -25,25 +25,3 @@ cd /WORKDIR # your working directory where you want the clone of the repo to res
 ```
 git clone https://github.com/mtarking/cisco-programmable-fabric
 ```
-
-## Option 2:
-
-Using the Dockerfile:
-
-```
-docker build -t cisco-programmable-fabric .
-```
-```
-docker run -it cisco-programmable-fabric
-```
-
-## Option 3:
-
-Pull directly from DockerHub:
-
-```
-docker pull mtarking/cisco-programmable-fabric
-```
-```
-docker run -it mtarking/cisco-programmable-fabric
-```
